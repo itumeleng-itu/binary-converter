@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #36454f;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    .container {
+        margin: 50px;
+        max-width: 1200px;
+        .nav {
+            display: flex;
+            align-items: center;
+            margin: 30px 0;
+            border: 1px solid transparent;
+            box-shadow: 0px 0px 4px 1px white;
+            border-radius: 20px;
+            padding: 10px 20px;
+            background-color: rgba(255, 255, 255, 0.05);
+            .imge{
+                img{
+                    border: 2px solid transparent;
+                    border-radius: 35%;
+                }
+            }
+            .links {
+                display: flex;
+                gap: 18px;
+                align-items: center;
+                margin-left: auto;
+                list-style: none;
+                    li {
+                        a {
+                        text-decoration: none;
+                        color: white;
+                        font-weight: bolder;
+                        font-size: large;
+                        padding: 8px 16px;
+                        }
+                        a:hover {
+                            border-top: 3px solid rgb(255, 253, 253);
+                        }
+                    }
+                }
+            }
+        }
+    .convert {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        margin: 40px 0;
+        #btd, #dtb {
+            border: 1px solid transparent;
+            box-shadow: 0px 0px 2px 1px rgb(119, 117, 117);
+            border-radius: 20px;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.05);
+            text-align: center;
+            p {
+            color: white;
+            font-size: large;
+            font-weight: bolder;
+            text-align: center;
+            margin-bottom: 20px;
+            text-transform: capitalize;
+            }
+            .input-group {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+                input {
+                    background-color: rgba(255, 255, 255, 0.1);
+                    border: 1px solid rgb(119, 117, 117);
+                    border-radius: 10px;
+                    padding: 12px;
+                    color: white;
+                    font-size: 16px;
+                    width: 200px;
+                    text-align: center;
+                }
+                .convert-btn {
+                    background-color: rgba(255, 255, 255, 0.1);
+                    border: 1px solid rgb(119, 117, 117);
+                    border-radius: 10px;
+                    padding: 10px 20px;
+                    color: white;
+                    font-weight: bold;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                }
+
+                .convert-btn:hover {
+                    background-color: rgba(255, 255, 255, 0.2);
+                    box-shadow: 0px 0px 4px 1px rgba(255, 255, 255, 0.3);
+                }
+            }
+        }
+    }
+    .table{
+        color:white;
+        table{
+            th{
+                border:1px solid white;
+            }
+            td{
+                border:1px solid white;
+            }
+            
+        }
+
+    }
+        
+}
+
+.table, .calculate {
+    border: 1px solid transparent;
+    box-shadow: 0px 0px 2px 1px rgb(119, 117, 117);
+    border-radius: 20px;
+    padding: 30px;
+    margin: 40px 0;
+    background-color: rgba(255, 255, 255, 0.05);
+    min-height: 200px;
+}
+
+.table h2, .calculate h2 {
+    color: white;
+    font-size: large;
+    font-weight: bolder;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.footer {
+    border: 1px solid transparent;
+    box-shadow: 0px 0px 2px 1px rgb(119, 117, 117);
+    border-radius: 20px;
+    padding: 20px;
+    margin: 40px 0;
+    background-color: rgba(255, 255, 255, 0.05);
+    text-align: center;
+}
+
+.footer p {
+    color: white;
+    font-weight: bold;
+}
+
+.result {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    min-height: 20px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 20px;
+    }
+    
+    .convert {
+        grid-template-columns: 1fr;
+    }
+    
+    .links {
+        margin-left: 20px;
+    }
+    
+    .nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
