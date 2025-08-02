@@ -70,3 +70,74 @@ function convertDecimalToBinary() {
         resultDiv.textContent = 'Conversion error: ' + error.message;
     }
 }
+
+
+function generateAsciiTable() {
+    const ranges = [
+        { start: 48, end: 57, desc: "Digit" },
+        { start: 97, end: 122, desc: "Lowercase" },
+        { start: 65, end: 90, desc: "Uppercase" }
+    ];
+
+    const tbody = document.getElementById("ascii-body");
+
+    ranges.forEach(range => {
+        for (let i = range.start; i <= range.end; i++) {
+            const char = String.fromCharCode(i);
+            const binary = i.toString(2).padStart(8, '0');
+            const htmlNumber = `&#${i};`;
+            const description = `${range.desc} ${char.toUpperCase()}`;
+            
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${char}</td>
+                <td>${binary}</td>
+                <td>${htmlNumber}</td>
+                <td>${description}</td>
+            `;
+            tbody.appendChild(row);
+        }
+    });
+}
+
+// Run on page load
+window.onload = function () {
+    generateAsciiTable();
+};
+
+
+
+
+
+let calcExpression = "";
+
+function appendToCalc(value) {
+    if (calcExpression === "0") calcExpression = "";
+    calcExpression += value;
+    document.getElementById("calc-display").textContent = calcExpression;
+}
+
+function clearCalc() {
+    calcExpression = "";
+    document.getElementById("calc-display").textContent = "0";
+}
+
+function calculateBinary() {
+    try {
+        // Convert all binary numbers to decimal using regex
+        const exprInDecimal = calcExpression.replace(/\b[01]+\b/g, bin => parseInt(bin, 2));
+        const decimalResult = eval(exprInDecimal);
+
+        if (isNaN(decimalResult)) {
+            document.getElementById("calc-display").textContent = "Invalid";
+            return;
+        }
+
+        // Convert final result back to binary
+        const binaryResult = decimalResult.toString(2);
+        calcExpression = binaryResult;
+        document.getElementById("calc-display").textContent = binaryResult;
+    } catch (e) {
+        document.getElementById("calc-display").textContent = "Error";
+    }
+}
