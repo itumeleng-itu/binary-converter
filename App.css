@@ -193,13 +193,14 @@ body {
 }
 
 /* Media Queries */
+/*new discovery - !importand - to override all existing declarations for a property (helps forcing browsers to apply that style regardless of other conflicting rules.) (my media queries wernt working so i used !important)*/
 @media (max-width: 1024px) {
     body {
         margin: 5%;
     }
     
     .container {
-        margin: 30px !important;
+        margin: 30px;
     }
     
     .convert {
