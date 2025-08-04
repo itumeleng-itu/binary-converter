@@ -192,22 +192,106 @@ body {
     }
 }
 
-
-@media (max-width: 768px) {
+/* Media Queries */
+@media (max-width: 1024px) {
+    body {
+        margin: 5%;
+    }
+    
     .container {
-        margin: 20px;
+        margin: 30px !important;
     }
     
     .convert {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
     }
     
-    .links {
-        margin-left: 20px;
+    .ascii-table table {
+        width: 90% !important;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        margin: 3%;
     }
     
     .nav {
         flex-direction: column;
-        gap: 15px;
+        padding: 15px !important;
+        
+        .links {
+            margin-left: 0 !important;
+            margin-top: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+    
+    .ascii-table table {
+        width: 100% !important;
+        font-size: 0.9rem;
+    }
+    
+    .calculator-wrapper .calc-buttons {
+        grid-template-columns: repeat(4, 50px) !important;
+        gap: 8px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        margin: 2%;
+    }
+    
+    .container {
+        margin: 15px !important;
+    }
+    
+    .nav .links {
+        gap: 10px !important;
+        
+        li a {
+            padding: 6px 10px !important;
+            font-size: medium !important;
+        }
+    }
+    
+    .convert #btd, 
+    .convert #dtb {
+        padding: 20px !important;
+    }
+    
+    .input-group input {
+        width: 100% !important;
+    }
+    
+    .ascii-table table {
+        font-size: 0.8rem;
+        
+        th, td {
+            padding: 3px !important;
+        }
+    }
+    
+    .calculator-wrapper {
+        h2 {
+            font-size: medium !important;
+        }
+        
+        .calc-buttons {
+            grid-template-columns: repeat(4, 45px) !important;
+            
+            button {
+                padding: 10px !important;
+                font-size: 0.9rem !important;
+            }
+        }
+    }
+    
+    .footer {
+        padding: 15px !important;
+        margin: 30px 0 !important;
     }
 }
